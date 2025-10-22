@@ -8,8 +8,9 @@
   "build": "vite build",
   "predeploy": "npm run build",
   "deploy": "gh-pages -d dist"
+}
 
-  },
+,
   "dependencies": {
     "lucide-react": "^0.546.0",
     "react": "^19.1.1",

@@ -65,6 +65,7 @@ const SprintSpreadsheet = () => {
 
   // Additional state for enhanced functionality
   const [showAddTask, setShowAddTask] = useState(false);
+  const [showEditTask, setShowEditTask] = useState(false);
   const [addTaskSprint, setAddTaskSprint] = useState(1);
   const [editingTask, setEditingTask] = useState(null);
   const [newTask, setNewTask] = useState({
@@ -148,7 +149,7 @@ const SprintSpreadsheet = () => {
   const editTask = (task) => {
     setEditingTask(task);
     setNewTask(task);
-    setShowAddTask(true);
+    setShowEditTask(true);
   };
 
   const updateTask = () => {
@@ -169,7 +170,7 @@ const SprintSpreadsheet = () => {
         assignee: '',
         notes: ''
       });
-      setShowAddTask(false);
+      setShowEditTask(false);
     }
   };
 
@@ -186,6 +187,7 @@ const SprintSpreadsheet = () => {
       notes: ''
     });
     setShowAddTask(false);
+    setShowEditTask(false);
   };
 
   const clearAllData = () => {
@@ -562,6 +564,114 @@ const SprintSpreadsheet = () => {
                       className="px-4 py-2 bg-blue-600 text-white rounded-lg"
                     >
                       Add Task
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Edit Task Form */}
+              {isExpanded && showEditTask && editingTask && (
+                <div className="bg-green-50 border-l-4 border-green-400 p-4 mb-4">
+                  <div className="flex justify-between items-center mb-4">
+                    <h4 className="text-lg font-semibold text-green-800">Chỉnh sửa Task: {editingTask.task}</h4>
+                    <button
+                      onClick={cancelEdit}
+                      className="text-green-600 text-xl font-bold"
+                    >
+                      ×
+                    </button>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Week</label>
+                      <select
+                        value={newTask.week}
+                        onChange={(e) => setNewTask({...newTask, week: parseInt(e.target.value)})}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                      >
+                        <option value={1}>Week 1</option>
+                        <option value={2}>Week 2</option>
+                        <option value={3}>Week 3</option>
+                        <option value={4}>Week 4</option>
+                        <option value={5}>Week 5</option>
+                        <option value={6}>Week 6</option>
+                        <option value={7}>Week 7</option>
+                        <option value={8}>Week 8</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Days</label>
+                      <input
+                        type="text"
+                        value={newTask.day}
+                        onChange={(e) => setNewTask({...newTask, day: e.target.value})}
+                        placeholder="e.g., 1-2, 3, 4-5"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Priority</label>
+                      <select
+                        value={newTask.priority}
+                        onChange={(e) => setNewTask({...newTask, priority: e.target.value})}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                      >
+                        <option value="MUST HAVE">MUST HAVE</option>
+                        <option value="SHOULD HAVE">SHOULD HAVE</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Task</label>
+                    <input
+                      type="text"
+                      value={newTask.task}
+                      onChange={(e) => setNewTask({...newTask, task: e.target.value})}
+                      placeholder="Nhập mô tả task"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Assignee</label>
+                      <input
+                        type="text"
+                        value={newTask.assignee}
+                        onChange={(e) => setNewTask({...newTask, assignee: e.target.value})}
+                        placeholder="Nhập tên người thực hiện"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Notes</label>
+                      <input
+                        type="text"
+                        value={newTask.notes}
+                        onChange={(e) => setNewTask({...newTask, notes: e.target.value})}
+                        placeholder="Nhập ghi chú cho task"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex justify-end gap-3">
+                    <button
+                      onClick={cancelEdit}
+                      className="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg"
+                    >
+                      Hủy
+                    </button>
+                    <button
+                      onClick={updateTask}
+                      className="px-4 py-2 bg-green-600 text-white rounded-lg"
+                    >
+                      Cập nhật Task
                     </button>
                   </div>
                 </div>
