@@ -20,37 +20,39 @@ const SprintSpreadsheet = () => {
     }
     return [
     // Sprint 1: Foundation & Stability (Week 1-2)
-    { id: 1, sprint: 1, week: 1, day: '1-2', task: 'MCP Connection Stabilization', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Debug Google Calendar API, implement token refresh, retry logic' },
-    { id: 2, sprint: 1, week: 1, day: '3-4', task: 'Dependency Management', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Resolve package conflicts, create requirements-lock.txt' },
-    { id: 3, sprint: 1, week: 1, day: '5', task: 'Error Handling Implementation', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Add try-catch blocks, user-friendly messages, graceful degradation' },
-    { id: 4, sprint: 1, week: 2, day: '1-2', task: 'Core Testing (Unit Tests)', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Test supervisor, calendar, health agents. 60% coverage goal' },
-    { id: 5, sprint: 1, week: 2, day: '3-4', task: 'Integration Testing', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'End-to-end flows, real Google Calendar, error scenarios' },
-    { id: 6, sprint: 1, week: 2, day: '5', task: 'Documentation Update', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Update SETUP.md, create QUICK_START.md, TROUBLESHOOTING.md' },
+    { id: 1, sprint: 1, week: 1, day: '1', task: 'Calendar Agent Unit Testing', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Write and run unit tests, ensure coverage ≥ 70%' },
+    { id: 2, sprint: 1, week: 1, day: '2', task: 'Calendar Agent Integration Testing', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Run end-to-end flow: user input → Calendar update → response' },
+    { id: 3, sprint: 1, week: 1, day: '3', task: 'Error Handling Validation', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Create test scenarios for errors and check user-friendly messages' },
+    { id: 4, sprint: 1, week: 1, day: '4', task: 'LangSmith Flow Visualization', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Compile state graph → render in LangSmith, highlight main flow and error branches' },
+    { id: 5, sprint: 1, week: 1, day: '5', task: 'Documentation & Demo Prep', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Update QUICK_START.md, describe flows, create slides/graph visualizations for demo' },
+    { id: 6, sprint: 1, week: 2, day: '1-2', task: 'MCP Connection Stabilization', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Debug Google Calendar API, implement token refresh, retry logic' },
+    { id: 7, sprint: 1, week: 2, day: '3-4', task: 'Dependency Management', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Resolve package conflicts, create requirements-lock.txt' },
+    { id: 8, sprint: 1, week: 2, day: '5', task: 'Error Handling Implementation', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Add try-catch blocks, user-friendly messages, graceful degradation' },
     
     // Sprint 2: Core Features Enhancement (Week 3-4)
-    { id: 7, sprint: 2, week: 3, day: '1-2', task: 'Enhanced Health Consultation', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Symptom checklist, conversation memory, medication reminders' },
-    { id: 8, sprint: 2, week: 3, day: '2-3', task: 'Smart Calendar Features', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Find best meeting time, recurring events, improved date parsing' },
-    { id: 9, sprint: 2, week: 3, day: '4-5', task: 'Calendar Conflict Intelligence', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Enhanced conflict detection, automatic alternatives, priority resolution' },
-    { id: 10, sprint: 2, week: 4, day: '1-3', task: 'Simple Note Agent', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Create note_agent.py, CRUD operations, Neon DB storage' },
-    { id: 11, sprint: 2, week: 4, day: '4', task: 'Agent Integration', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Update supervisor routing, cross-agent capabilities' },
-    { id: 12, sprint: 2, week: 4, day: '5', task: 'UI Integration for Notes', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Add note commands to Streamlit, viewing panel, quick buttons' },
+    { id: 9, sprint: 2, week: 3, day: '1-2', task: 'Enhanced Health Consultation', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Symptom checklist, conversation memory, medication reminders' },
+    { id: 10, sprint: 2, week: 3, day: '2-3', task: 'Smart Calendar Features', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Find best meeting time, recurring events, improved date parsing' },
+    { id: 11, sprint: 2, week: 3, day: '4-5', task: 'Calendar Conflict Intelligence', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Enhanced conflict detection, automatic alternatives, priority resolution' },
+    { id: 12, sprint: 2, week: 4, day: '1-3', task: 'Simple Note Agent', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Create note_agent.py, CRUD operations, Neon DB storage' },
+    { id: 13, sprint: 2, week: 4, day: '4', task: 'Agent Integration', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Update supervisor routing, cross-agent capabilities' },
+    { id: 14, sprint: 2, week: 4, day: '5', task: 'UI Integration for Notes', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Add note commands to Streamlit, viewing panel, quick buttons' },
     
     // Sprint 3: User Experience & Polish (Week 5-6)
-    { id: 13, sprint: 3, week: 5, day: '1-2', task: 'Streamlit Interface Redesign', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Better design, collapsible sections, markdown rendering, notifications' },
-    { id: 14, sprint: 3, week: 5, day: '3', task: 'Quick Actions & Shortcuts', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Suggestion chips, command shortcuts, example prompts' },
-    { id: 15, sprint: 3, week: 5, day: '4-5', task: 'Mobile-Responsive Design', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Test on mobile, adjust layout, optimize touch interactions' },
-    { id: 16, sprint: 3, week: 6, day: '1-2', task: 'Performance Optimization', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Response caching, optimize queries, reduce API calls, <2s target' },
-    { id: 17, sprint: 3, week: 6, day: '3', task: 'State Management Optimization', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Conversation cleanup, memory limits, session timeout' },
-    { id: 18, sprint: 3, week: 6, day: '4-5', task: 'Accessibility & i18n', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Vietnamese support, contrast ratios, ARIA labels, language switcher' },
+    { id: 15, sprint: 3, week: 5, day: '1-2', task: 'Streamlit Interface Redesign', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Better design, collapsible sections, markdown rendering, notifications' },
+    { id: 16, sprint: 3, week: 5, day: '3', task: 'Quick Actions & Shortcuts', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Suggestion chips, command shortcuts, example prompts' },
+    { id: 17, sprint: 3, week: 5, day: '4-5', task: 'Mobile-Responsive Design', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Test on mobile, adjust layout, optimize touch interactions' },
+    { id: 18, sprint: 3, week: 6, day: '1-2', task: 'Performance Optimization', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Response caching, optimize queries, reduce API calls, <2s target' },
+    { id: 19, sprint: 3, week: 6, day: '3', task: 'State Management Optimization', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Conversation cleanup, memory limits, session timeout' },
+    { id: 20, sprint: 3, week: 6, day: '4-5', task: 'Accessibility & i18n', priority: 'SHOULD HAVE', status: 'pending', assignee: '', notes: 'Vietnamese support, contrast ratios, ARIA labels, language switcher' },
     
     // Sprint 4: Production Readiness (Week 7-8)
-    { id: 19, sprint: 4, week: 7, day: '1-2', task: 'Containerization', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Create Dockerfile, docker-compose.yml, test locally' },
-    { id: 20, sprint: 4, week: 7, day: '2-3', task: 'Cloud Deployment', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Deploy to Railway/Render, configure production DB, staging environment' },
-    { id: 21, sprint: 4, week: 7, day: '4-5', task: 'Security Hardening', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Rate limiting, input validation, secure API keys, HTTPS, auth' },
-    { id: 22, sprint: 4, week: 8, day: '1-2', task: 'Monitoring Setup', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Structured logging, error tracking, analytics, health check, uptime monitoring' },
-    { id: 23, sprint: 4, week: 8, day: '3', task: 'Final Testing', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'E2E in production, load testing, security scan, UAT, bug fixes' },
-    { id: 24, sprint: 4, week: 8, day: '4', task: 'Documentation Finalization', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'USER_GUIDE.md, DEPLOYMENT.md, FAQ.md, VIDEO_DEMO.md, README update' },
-    { id: 25, sprint: 4, week: 8, day: '5', task: 'Launch Preparation', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Launch checklist, announcements, feedback channel, support docs' }
+    { id: 21, sprint: 4, week: 7, day: '1-2', task: 'Containerization', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Create Dockerfile, docker-compose.yml, test locally' },
+    { id: 22, sprint: 4, week: 7, day: '2-3', task: 'Cloud Deployment', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Deploy to Railway/Render, configure production DB, staging environment' },
+    { id: 23, sprint: 4, week: 7, day: '4-5', task: 'Security Hardening', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Rate limiting, input validation, secure API keys, HTTPS, auth' },
+    { id: 24, sprint: 4, week: 8, day: '1-2', task: 'Monitoring Setup', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Structured logging, error tracking, analytics, health check, uptime monitoring' },
+    { id: 25, sprint: 4, week: 8, day: '3', task: 'Final Testing', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'E2E in production, load testing, security scan, UAT, bug fixes' },
+    { id: 26, sprint: 4, week: 8, day: '4', task: 'Documentation Finalization', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'USER_GUIDE.md, DEPLOYMENT.md, FAQ.md, VIDEO_DEMO.md, README update' },
+    { id: 27, sprint: 4, week: 8, day: '5', task: 'Launch Preparation', priority: 'MUST HAVE', status: 'pending', assignee: '', notes: 'Launch checklist, announcements, feedback channel, support docs' }
   ];
   });
 
@@ -459,11 +461,13 @@ const SprintSpreadsheet = () => {
                 </div>
               </div>
 
-              {/* Add Task Form */}
-              {isExpanded && showAddTask && addTaskSprint === sprint.id && (
+              {/* Add/Edit Task Form */}
+              {isExpanded && showAddTask && (editingTask ? editingTask.sprint === sprint.id : addTaskSprint === sprint.id) && (
                 <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
                   <div className="flex justify-between items-center mb-4">
-                    <h4 className="text-lg font-semibold text-blue-800">Add Task Mới cho {sprint.name}</h4>
+                    <h4 className="text-lg font-semibold text-blue-800">
+                      {editingTask ? `Edit Task trong ${sprint.name}` : `Add Task Mới cho ${sprint.name}`}
+                    </h4>
                     <button
                       onClick={cancelEdit}
                       className="text-blue-600 text-xl font-bold"
@@ -558,10 +562,10 @@ const SprintSpreadsheet = () => {
                       Hủy
                     </button>
                     <button
-                      onClick={() => addTask(sprint.id)}
+                      onClick={() => editingTask ? updateTask() : addTask(sprint.id)}
                       className="px-4 py-2 bg-blue-600 text-white rounded-lg"
                     >
-                      Add Task
+                      {editingTask ? 'Update Task' : 'Add Task'}
                     </button>
                   </div>
                 </div>
